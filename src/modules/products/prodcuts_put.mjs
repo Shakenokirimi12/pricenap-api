@@ -1,3 +1,5 @@
+import { headerBuilder } from "../headerBuilder.mjs"
+
 export async function handle_PUT_Products(request, env) {
     let testresponsejson = {
         "message": "Success!",
