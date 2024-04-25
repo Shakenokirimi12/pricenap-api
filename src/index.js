@@ -1,7 +1,10 @@
+import { headerBuilder } from "./modules/headerBuilder.mjs";
 import { handle_GET_Products } from "./modules/products/prodcuts_get.mjs";
 import { handle_POST_Products } from "./modules/products/prodcuts_post.mjs";
 import { handle_PUT_Products } from "./modules/products/prodcuts_put.mjs";
-import { headerBuilder } from "./modules/headerBuilder.mjs";
+import { handle_GET_Stores } from "./modules/stores/stores_get.mjs";
+import { handle_POST_Stores } from "./modules/stores/stores_post.mjs";
+import { handle_PUT_Stores } from "./modules/stores/stores_put.mjs";
 
 export default {
 	async fetch(request, env, ctx) {
@@ -25,6 +28,18 @@ export default {
 				}
 			}
 			if (pathname === "/v1/stores") {
+				if (request.method == "POST") {
+					console.log("/stores/:POSTが投げられました。");
+					return await handle_POST_Stores(request, env);
+				}
+				if (request.method == "GET") {
+					console.log("/stores/:GETが投げられました。");
+					return await handle_GET_Stores(request, env);
+				}
+				if (request.method == "PUT") {
+					console.log("/stores/:PUTが投げられました。");
+					return await handle_PUT_Stores(request, env);
+				}
 			}
 		}
 		else {
