@@ -9,4 +9,5 @@ export async function headerBuilder(statuscode) {
             "Access-Control-Allow-Headers": "Content-Type"
         }
     };
-}/*DO NOT EDIT!!!!!!!*/
+}
+/*DO NOT EDIT!!!!!!!*/
