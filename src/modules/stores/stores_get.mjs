@@ -14,7 +14,7 @@ export async function handle_GET_Stores(request, env) {
         let geolocation_lon = searchParams.get('geolocation_lon');
     }
     else {
-        return new Response(JSON.stringify([{ "message": "You can't get values with only latitude or only longtitude.", "status_Code": "ST-CE-M11" }]), await headerBuilder(200))
+        return new Response(JSON.stringify([{ "message": "You can't get values only with latitude or only with longtitude.", "status_Code": "ST-CE-M11" }]), await headerBuilder(200))
     }
     return new Response(JSON.stringify(testresponsejson), await headerBuilder(200))
 }
